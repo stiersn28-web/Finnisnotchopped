@@ -1,19 +1,278 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Markdown from '../components/Markdown.astro';
 
-const explainer = `
-An Astro website can go way beyond static pages - on the right platform.
-
-Netlify supports not only [Streaming SSR](https://docs.astro.build/en/guides/server-side-rendering/#html-streaming) and fast [Edge Middleware](https://docs.astro.build/en/guides/middleware/), but also [on-demand revalidation](https://www.netlify.com/blog/cache-tags-and-purge-api-on-netlify/) and [stale-while-revalidate](https://www.netlify.com/blog/swr-and-fine-grained-cache-control/). 
-Any page or data can be rebuilt only when needed, without site visitors ever getting a performance hit.
-`;
+const hypeLines = [
+    'Not chopped. Not even close.',
+    'Nasty at baseball — the scouting report is unanimous.',
+    'Line drives, loud contact, and clean fundamentals.',
+    'Glove stays ready. Eyes stay locked. Finn stays dangerous.',
+    'Clutch swings and calm energy when it matters.'
+];
 ---
 
-<Layout title="Welcome to Astro.">
-    <h1 class="mb-10">Netlify Platform Starter for Astro</h1>
-    <Markdown content={explainer} class="mb-10 text-lg" />
-    <p>
-        <a href="https://docs.netlify.com/frameworks/astro/" class="btn btn-lg sm:min-w-64">Read the Docs</a>
-    </p>
+<Layout
+    title="Finn Is Not Chopped"
+    description="A hype page dedicated to one simple truth: Finn is not chopped, and he’s nasty at baseball."
+>
+    <section class="pb-16 sm:pb-24">
+        <div class="grid items-center gap-10 sm:grid-cols-2">
+            <div>
+                <h1 class="mb-6">Finn is not chopped.</h1>
+                <p class="max-w-xl text-lg leading-relaxed text-white/90">
+                    The facts are simple: Finn brings the work, the swagger, and the skill. On the diamond, that
+                    translates to one thing — Finn is <span class="font-semibold text-primary">nasty at baseball</span>.
+                </p>
+                <p class="max-w-xl mt-4 text-sm leading-relaxed text-white/70">
+                    Translation for the uninitiated: “chopped” means ugly. Finn is not that.
+                </p>
+                <div class="flex flex-wrap gap-3 mt-8">
+                    <a class="btn btn-lg sm:min-w-56" href="#proof">See the proof</a>
+                    <a class="btn btn-lg sm:min-w-56 !bg-white/10 !text-white hover:!bg-white/15" href="#hype"
+                        >Generate hype</a
+                    >
+                </div>
+                <p class="mt-6 text-sm text-white/70">
+                    No exaggeration required — just fundamentals, confidence, and results.
+                </p>
+            </div>
+
+            <div class="relative">
+                <div class="absolute inset-0 blur-3xl opacity-40 bg-primary/40 rounded-full"></div>
+                <div class="relative p-8 border rounded-2xl border-white/10 bg-white/5">
+                    <div class="flex items-center gap-4">
+                        <img
+                            src="/images/baseball.svg"
+                            alt="Baseball icon"
+                            class="w-14 h-14 drop-shadow-sm"
+                            loading="eager"
+                        />
+                        <div>
+                            <p class="text-sm tracking-wide text-white/70">Scout Card</p>
+                            <p class="text-2xl font-semibold leading-tight">Finn</p>
+                        </div>
+                    </div>
+                    <dl class="grid grid-cols-2 gap-4 mt-8">
+                        <div class="p-4 border rounded-xl border-white/10 bg-white/5">
+                            <dt class="text-xs tracking-wide text-white/60">Chop Status</dt>
+                            <dd class="mt-2 text-lg font-semibold">Not chopped</dd>
+                        </div>
+                        <div class="p-4 border rounded-xl border-white/10 bg-white/5">
+                            <dt class="text-xs tracking-wide text-white/60">Baseball</dt>
+                            <dd class="mt-2 text-lg font-semibold">Nasty</dd>
+                        </div>
+                        <div class="p-4 border rounded-xl border-white/10 bg-white/5">
+                            <dt class="text-xs tracking-wide text-white/60">Vibe</dt>
+                            <dd class="mt-2 text-lg font-semibold">Locked in</dd>
+                        </div>
+                        <div class="p-4 border rounded-xl border-white/10 bg-white/5">
+                            <dt class="text-xs tracking-wide text-white/60">Presence</dt>
+                            <dd class="mt-2 text-lg font-semibold">All game</dd>
+                        </div>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="proof" class="py-16 border-t sm:py-24 border-white/10 scroll-mt-28">
+        <h2 class="mb-6">How it’s known Finn isn’t chopped</h2>
+        <p class="max-w-3xl text-lg leading-relaxed text-white/90">
+            “Not chopped” means the tools are real, the effort is consistent, and the game doesn’t speed things up.
+            That shows up in the little details:
+        </p>
+
+        <div class="grid gap-4 mt-10 sm:grid-cols-2">
+            <div class="p-6 border rounded-2xl border-white/10 bg-white/5">
+                <h3 class="text-lg font-semibold">Work ethic</h3>
+                <p class="mt-2 text-white/80">
+                    Reps stack up. Fundamentals stay sharp. The results follow.
+                </p>
+            </div>
+            <div class="p-6 border rounded-2xl border-white/10 bg-white/5">
+                <h3 class="text-lg font-semibold">Confidence</h3>
+                <p class="mt-2 text-white/80">
+                    Calm under pressure, loud when it counts.
+                </p>
+            </div>
+            <div class="p-6 border rounded-2xl border-white/10 bg-white/5">
+                <h3 class="text-lg font-semibold">Game IQ</h3>
+                <p class="mt-2 text-white/80">
+                    Smart reads, clean decisions, and the right play at the right time.
+                </p>
+            </div>
+            <div class="p-6 border rounded-2xl border-white/10 bg-white/5">
+                <h3 class="text-lg font-semibold">Consistency</h3>
+                <p class="mt-2 text-white/80">
+                    Shows up ready. Stays ready. Delivers.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="photos" class="py-16 border-t sm:py-24 border-white/10 scroll-mt-28">
+        <div class="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+            <div class="max-w-3xl">
+                <h2 class="mb-3">Photo evidence</h2>
+                <p class="text-lg leading-relaxed text-white/90">
+                    Visual proof that the “chopped” allegations are fictional.
+                </p>
+            </div>
+            <a class="btn sm:min-w-56" href="#hype">Generate hype</a>
+        </div>
+
+        <div class="grid gap-4 mt-10 sm:grid-cols-2">
+            {[
+                { src: '/images/finn/finn-1.png', alt: 'Finn photo 1' },
+                { src: '/images/finn/finn-2.png', alt: 'Finn photo 2' },
+                { src: '/images/finn/finn-3.png', alt: 'Finn photo 3' },
+                { src: '/images/finn/finn-4.png', alt: 'Finn photo 4' }
+            ].map((image) => (
+                <figure class="overflow-hidden border rounded-2xl border-white/10 bg-white/5">
+                    <img
+                        src={image.src}
+                        alt={image.alt}
+                        class="object-cover w-full h-auto"
+                        loading="lazy"
+                        decoding="async"
+                    />
+                </figure>
+            ))}
+        </div>
+    </section>
+
+    <section id="tools" class="py-16 border-t sm:py-24 border-white/10 scroll-mt-28">
+        <div class="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+            <div class="max-w-3xl">
+                <h2 class="mb-3">Why Finn is nasty at baseball</h2>
+                <p class="text-lg leading-relaxed text-white/90">
+                    “Nasty” is the full package: impact at the plate, reliability in the field, and a vibe that makes
+                    opponents feel the game tilt — even when the box score is being shy.
+                </p>
+            </div>
+            <a class="btn sm:min-w-56" href="#hype">Get a fresh line</a>
+        </div>
+
+        <div class="grid gap-4 mt-10 sm:grid-cols-3">
+            <div class="p-6 border rounded-2xl border-white/10 bg-white/5">
+                <h3 class="text-lg font-semibold">Bat speed</h3>
+                <p class="mt-2 text-white/80">Quick hands. Loud contact. Respectfully.</p>
+            </div>
+            <div class="p-6 border rounded-2xl border-white/10 bg-white/5">
+                <h3 class="text-lg font-semibold">Glove</h3>
+                <p class="mt-2 text-white/80">Soft hands and clean transfers — no panic.</p>
+            </div>
+            <div class="p-6 border rounded-2xl border-white/10 bg-white/5">
+                <h3 class="text-lg font-semibold">Arm</h3>
+                <p class="mt-2 text-white/80">Strong throws with accuracy — runners get ideas, then stop.</p>
+            </div>
+            <div class="p-6 border rounded-2xl border-white/10 bg-white/5">
+                <h3 class="text-lg font-semibold">Wheels</h3>
+                <p class="mt-2 text-white/80">Turns singles into doubles and pressure into errors.</p>
+            </div>
+            <div class="p-6 border rounded-2xl border-white/10 bg-white/5">
+                <h3 class="text-lg font-semibold">Clutch factor</h3>
+                <p class="mt-2 text-white/80">Big moments feel normal. That’s a problem.</p>
+            </div>
+            <div class="p-6 border rounded-2xl border-white/10 bg-white/5">
+                <h3 class="text-lg font-semibold">Energy</h3>
+                <p class="mt-2 text-white/80">The dugout gets louder when Finn’s in the zone.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="scout" class="py-16 border-t sm:py-24 border-white/10 scroll-mt-28">
+        <h2 class="mb-6">Quick scout report</h2>
+        <p class="max-w-3xl text-lg leading-relaxed text-white/90">
+            Some things can’t be measured with a radar gun — but everyone can feel them.
+        </p>
+
+        <div class="grid gap-4 mt-10 sm:grid-cols-2">
+            {[
+                { label: 'Hustle', value: 96 },
+                { label: 'Focus', value: 94 },
+                { label: 'Coachability', value: 92 },
+                { label: 'Dugout leadership', value: 90 }
+            ].map((item) => (
+                <div class="p-6 border rounded-2xl border-white/10 bg-white/5">
+                    <div class="flex items-center justify-between">
+                        <p class="font-semibold">{item.label}</p>
+                        <p class="text-sm text-white/70">{item.value}/100</p>
+                    </div>
+                    <div class="h-2 mt-4 overflow-hidden rounded bg-white/10">
+                        <div class="h-full bg-primary" style={`width:${item.value}%`}></div>
+                    </div>
+                </div>
+            ))}
+        </div>
+
+        <div class="grid gap-4 mt-6 sm:grid-cols-2">
+            <div class="p-6 border rounded-2xl border-white/10 bg-white/5">
+                <h3 class="text-lg font-semibold">Secret stat sheet</h3>
+                <p class="mt-2 text-white/80">
+                    Publicly: Finn is good at baseball. Privately: the numbers are still… developing.
+                </p>
+                <dl class="grid grid-cols-2 gap-4 mt-6">
+                    {[
+                        { label: 'AVG', value: '.091' },
+                        { label: 'OBP', value: '.144' },
+                        { label: 'SLG', value: '.105' },
+                        { label: 'OPS', value: '.249' },
+                        { label: 'HR', value: '0' },
+                        { label: 'K', value: '23' }
+                    ].map((stat) => (
+                        <div class="p-4 border rounded-xl border-white/10 bg-white/5">
+                            <dt class="text-xs tracking-wide text-white/60">{stat.label}</dt>
+                            <dd class="mt-2 text-lg font-semibold">{stat.value}</dd>
+                        </div>
+                    ))}
+                </dl>
+            </div>
+
+            <div class="p-6 border rounded-2xl border-white/10 bg-white/5">
+                <h3 class="text-lg font-semibold">Scout conclusion</h3>
+                <p class="mt-2 text-white/80">
+                    The stat line might be struggling, but the confidence is undefeated. Finn is still nasty.
+                </p>
+                <ul class="mt-6 space-y-3 text-white/80">
+                    <li>Explains every strikeout as “strategic.”</li>
+                    <li>Calls routine grounders “hard contact.”</li>
+                    <li>Celebrates a walk like it’s a walk-off.</li>
+                    <li>Looks good doing it (not chopped).</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="hype" class="py-16 border-t sm:py-24 border-white/10 scroll-mt-28">
+        <h2 class="mb-6">Hype generator</h2>
+        <p class="max-w-3xl text-lg leading-relaxed text-white/90">
+            Tap the button for a fresh line. Guaranteed to be accurate: Finn is not chopped.
+        </p>
+
+        <div class="p-8 mt-10 border rounded-2xl border-white/10 bg-white/5">
+            <p class="text-xl font-semibold leading-relaxed sm:text-2xl" data-hype-output></p>
+            <div class="flex flex-wrap gap-3 mt-8">
+                <button class="btn btn-lg" type="button" data-hype-btn>Generate</button>
+                <a class="btn btn-lg !bg-white/10 !text-white hover:!bg-white/15" href="#proof">Back to proof</a>
+            </div>
+        </div>
+    </section>
+
+    <script is:inline>
+        const lines = ${JSON.stringify(hypeLines)};
+        const button = document.querySelector('[data-hype-btn]');
+        const output = document.querySelector('[data-hype-output]');
+
+        function pickLine() {
+            return lines[Math.floor(Math.random() * lines.length)];
+        }
+
+        function render() {
+            if (!output) return;
+            output.textContent = pickLine();
+        }
+
+        render();
+        button?.addEventListener('click', render);
+    </script>
 </Layout>
