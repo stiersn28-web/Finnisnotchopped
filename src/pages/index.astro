@@ -1,13 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro';
-
-const hypeLines = [
-    'Not chopped. Not even close.',
-    'Nasty at baseball — the scouting report is unanimous.',
-    'Line drives, loud contact, and clean fundamentals.',
-    'Glove stays ready. Eyes stay locked. Finn stays dangerous.',
-    'Clutch swings and calm energy when it matters.'
-];
 ---
 
 <Layout
@@ -246,11 +238,13 @@ const hypeLines = [
     <section id="hype" class="py-16 border-t sm:py-24 border-white/10 scroll-mt-28">
         <h2 class="mb-6">Hype generator</h2>
         <p class="max-w-3xl text-lg leading-relaxed text-white/90">
-            Tap the button for a fresh line. Guaranteed to be accurate: Finn is not chopped.
+            Tap the button for a line that glazes Finn. Guaranteed to be accurate: Finn is not chopped.
         </p>
 
         <div class="p-8 mt-10 border rounded-2xl border-white/10 bg-white/5">
-            <p class="text-xl font-semibold leading-relaxed sm:text-2xl" data-hype-output></p>
+            <p class="text-xl font-semibold leading-relaxed sm:text-2xl" data-hype-output>
+                Tap “Generate” to glaze Finn.
+            </p>
             <div class="flex flex-wrap gap-3 mt-8">
                 <button class="btn btn-lg" type="button" data-hype-btn>Generate</button>
                 <a class="btn btn-lg !bg-white/10 !text-white hover:!bg-white/15" href="#proof">Back to proof</a>
@@ -259,20 +253,17 @@ const hypeLines = [
     </section>
 
     <script is:inline>
-        const lines = ${JSON.stringify(hypeLines)};
         const button = document.querySelector('[data-hype-btn]');
         const output = document.querySelector('[data-hype-output]');
 
-        function pickLine() {
-            return lines[Math.floor(Math.random() * lines.length)];
-        }
+        const glazeMessage =
+            'Finn is not chopped — he’s the standard. Effortless aura, locked-in energy, and nasty at baseball.';
 
-        function render() {
+        function renderGlaze() {
             if (!output) return;
-            output.textContent = pickLine();
+            output.textContent = glazeMessage;
         }
 
-        render();
-        button?.addEventListener('click', render);
+        button?.addEventListener('click', renderGlaze);
     </script>
 </Layout>
